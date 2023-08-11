@@ -3,7 +3,8 @@
  Min Operations
 """
 
-def minOperations(n: int)-> int:
+
+def minOperations(n: int) -> int:
     """
     Function to implement the min Operation algorithm
     """
