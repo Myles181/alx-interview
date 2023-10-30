@@ -5,14 +5,14 @@ Vlidation of UTF8 encoding
 
 
 def validUTF8(data):
-     """
-     Initialize a variable to keep track of the number of bytes in the current character
-     """
+    """
+    validUTF8 - Initialize a variable to keep track of the number of bytes in the current character
+    Parameters: data(integer)
+    Return: A boolean
+    """
     bytes_to_read = 0
 
     for num in data:
-        """ Check if the most significant bit of the current byte is 0
-        """
         if num & 0x80 == 0:
             if bytes_to_read > 0:
                 return False
