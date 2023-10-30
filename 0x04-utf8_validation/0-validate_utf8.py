@@ -6,7 +6,8 @@ Vlidation of UTF8 encoding
 
 def validUTF8(data):
     """
-    Initialize a variable to keep track of the number of bytes in the current character
+    Initialize a variable to keep track of the number of bytes
+        in the current character
     Parameters: data(integer)
     Return: A boolean
     """
@@ -33,4 +34,3 @@ def validUTF8(data):
                 return False
 
     return bytes_to_read == 0
-
