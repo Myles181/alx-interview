@@ -11,17 +11,18 @@ def validUTF8(data):
     bytes_to_read = 0
 
     for num in data:
-        # Check if the most significant bit of the current byte is 0
+        """ Check if the most significant bit of the current byte is 0
+        """
         if num & 0x80 == 0:
             if bytes_to_read > 0:
-                return False  # Invalid continuation byte
+                return False
         elif num & 0xC0 == 0x80:
             if bytes_to_read == 0:
-                return False  # Invalid start of a character
+                return False
             bytes_to_read -= 1
         else:
             if bytes_to_read > 0:
-                return False  # Invalid continuation byte
+                return False
             if num & 0xE0 == 0xC0:
                 bytes_to_read = 1
             elif num & 0xF0 == 0xE0:
@@ -29,7 +30,7 @@ def validUTF8(data):
             elif num & 0xF8 == 0xF0:
                 bytes_to_read = 3
             else:
-                return False  # Invalid start of a character
+                return False
 
-    return bytes_to_read == 0  # All characters were properly terminate
+    return bytes_to_read == 0
 
