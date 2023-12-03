@@ -1,4 +1,10 @@
+#!/usr/bin/python3
+
+"""Island Perimeter
+"""
 def island_perimeter(grid):
+    """grid - Cascade
+    """
     perimeter = 0
 
     if not grid or not grid[0]:
